@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Flappy Bird - Optimized</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="game-container">
+        <canvas id="gameCanvas"></canvas>
+
+        <!-- HUD Puntuación -->
+        <div id="score-hud">0</div>
+
+        <!-- Pantalla de Inicio -->
+        <div id="start-screen" class="ui-layer">
+            <h1>FLAPPY<br>HD</h1>
+            
+            <!-- Dificultad -->
+            <p style="font-size: 0.7rem; margin-bottom: 10px; opacity: 0.8;">DIFICULTAD</p>
+            <div class="mode-selection">
+                <button id="btn-easy" class="btn-mode easy">EASY</button>
+                <button id="btn-nightmare" class="btn-mode nightmare">NIGHTMARE</button>
+            </div>
+
+            <!-- Configuración de Gráficos (NUEVO) -->
+            <button id="btn-graphics" class="btn-mode settings">⚙️ GRÁFICOS: ALTO</button>
+
+            <!-- Diseño de Tuberías -->
+            <p style="font-size: 0.7rem; margin: 15px 0 10px 0; opacity: 0.8;">DISEÑO DE TUBOS</p>
+            <div class="skin-selector">
+                <button class="skin-btn active" data-type="pipe" data-skin="classic" style="border-color:#2ecc71; background: #2ecc71;">🟢</button>
+                <button class="skin-btn" data-type="pipe" data-skin="industrial" style="border-color:#95a5a6; background: #95a5a6;">🏗️</button>
+                <button class="skin-btn" data-type="pipe" data-skin="neon" style="border-color:#00f3ff; background: #000;">⚡</button>
+            </div>
+
+            <!-- Selector de Skins -->
+            <p style="font-size: 0.7rem; margin: 15px 0 10px 0; opacity: 0.8;">ELIGE PERSONAJE</p>
+            <div class="skin-selector">
+                <button class="skin-btn active" data-type="player" data-skin="bird">🐦</button>
+                <button class="skin-btn" data-type="player" data-skin="alien">👽</button>
+                <button class="skin-btn" data-type="player" data-skin="duck">🦆</button>
+                <button class="skin-btn" data-type="player" data-skin="pig">🐷</button>
+                <button class="skin-btn" data-type="player" data-skin="platypus">🦦</button>
+                <button class="skin-btn" data-type="player" data-skin="unicorn">🦄</button>
+                <button class="skin-btn" data-type="player" data-skin="eggplant">🍆</button>
+            </div>
+
+            <div class="footer-info">v5.0 - Balanced & Optimized</div>
+        </div>
+
+        <!-- Pantalla Game Over -->
+        <div id="game-over-screen" class="ui-layer hidden">
+            <h1 style="color: #e86101; font-size: 2rem;">GAME OVER</h1>
+            
+            <div class="panel">
+                <div class="score-row">
+                    <span>MODO</span>
+                    <span id="mode-display" class="score-val">-</span>
+                </div>
+                <div class="score-row">
+                    <span>PUNTOS</span>
+                    <span id="final-score" class="score-val">0</span>
+                </div>
+                <div class="score-row">
+                    <span>MEJOR</span>
+                    <span id="best-score" class="score-val">0</span>
+                </div>
+                <div id="new-record-msg" class="hidden" style="color: red; font-size: 0.7rem; margin-top:5px;">¡NUEVO RÉCORD!</div>
+            </div>
+
+            <button class="btn" id="restart-btn">MENÚ PRINCIPAL</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
